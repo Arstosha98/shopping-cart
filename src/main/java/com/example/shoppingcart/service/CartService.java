@@ -3,21 +3,19 @@ package com.example.shoppingcart.service;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 @SessionScope
 public class CartService {
 
-    private final List<Integer> storage = new ArrayList<>();
+    private final Set<Integer> storage = new HashSet<>();
 
-    public void add(List<Integer>ids){
+    public void add(List<Integer> ids){
         storage.addAll(ids);
     }
 
-    public List<Integer> get(){
-        return Collections.unmodifiableList(storage);
+    public Set get(){
+        return Collections.unmodifiableSet(storage);
     }
 }

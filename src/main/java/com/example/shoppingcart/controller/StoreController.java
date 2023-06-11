@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/order")
@@ -24,7 +25,7 @@ public class StoreController {
     }
 
     @GetMapping("/get")
-    public List<Integer> get(){
+    public Set<Integer> get(){
         return service.get();
     }
 }
